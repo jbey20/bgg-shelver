@@ -1,0 +1,31 @@
+Shelves
+    -"Surprise me" option (open ended selection)
+    -Limited to user-selected shelves
+    -(stretch) Sytlistic (combine for asthetics)
+    -(stretch) Allow users to specify maximum dimensions 
+
+Games
+    -input prompt with suggestions for popular games
+    -(stretch) allow users to make a profile and add more
+    -(stretch) scan w/ phone
+    -(stretch) add from retailers
+    -Allow padding space (number of standard games)
+    -allow to select/deselect large/awkward games
+
+Database
+    -database of all known games
+        -dimensions (h/w/l)
+        -display faces
+        -game category
+        -(stretch) image of game face for display
+    -user database of owned games
+    -(stretch) allow users to upload new game dimesions w/
+        approvals
+
+
+First steps;
+    make first game dimensions database
+    make simple web page/user interface
+    run first sorting/packing algorithm
+
+
