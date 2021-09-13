@@ -1,0 +1,4 @@
+https://boardgamegeek.com/xmlapi2/collection?username=jbey20&own=1&version=1
+
+https://boardgamegeek.com/xmlapi2/thing?id=298638&versions=1
+
