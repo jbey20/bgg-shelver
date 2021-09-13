@@ -54,27 +54,32 @@ const getGameDetails = (ids) => {
       // Process only element nodes (type 1)
       if (y.nodeType == 1 && (y.getAttribute('type') == 'boardgame')) {
         let gameNode = y.getElementsByTagName('name')[0];
-        let versionNodes = [...y.getElementsByTagName('versions')];
+        let versionNode = y.getElementsByTagName('versions')[0];
         const gameObj = {
           name: gameNode.getAttribute('value'),
           versions: {}        
         }
+
+        const versionItems = [...versionNode.getElementsByTagName("item")];
         
-        versionNodes.forEach(element => {
+        const versionArr = [];
+        versionItems.forEach(element => {
           versionObj = {
             versionName : element.getElementsByTagName('name')[0].getAttribute('value'),
             length : element.getElementsByTagName('length')[0].getAttribute('value'),
             width : element.getElementsByTagName('width')[0].getAttribute('value'),
             depth : element.getElementsByTagName('depth')[0].getAttribute('value')
           }
-          gameObj.versions = versionObj;
-        });          
-       
+          versionArr.push(versionObj);
+        }); 
+
+        gameObj.versions = versionArr;
         games.push(gameObj);
       }
       y = y.nextSibling;
     } 
     console.log(games);
+    
     return games;
   });
 };
@@ -103,13 +108,6 @@ getGameIDs('jbey20').then((ids) => {
 })
 .then((output) => {
   downloadObjectAsJson(output, 'output')  
-  
-  // console.log(output);
-  // let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(output));
-  // let dlAnchorElem = document.getElementById('downloadAnchorElem');
-  // dlAnchorElem.setAttribute("href",     dataStr     );
-  // dlAnchorElem.setAttribute("download", "download.json");
-  // dlAnchorElem.click();
 });
 
 
